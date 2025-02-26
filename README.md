@@ -1,6 +1,16 @@
 # React + Vite Calculator BMI Hudzaifah 🔖
 
+Deployment link :
+https://bmiapphudzaifah.netlify.app/
+
+or 
+
+hudzaifah.my.id
+
+local run :
+
 How to run
+
 ```
 
 npm i
