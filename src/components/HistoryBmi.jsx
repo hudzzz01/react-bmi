@@ -1,10 +1,14 @@
 import React from 'react';
 import HistoryItem from './HistoryItem';
+import donat from '../assets/donat.svg';
 
 const HistoryBmi = ({ arrHistory, deleteHistoryById }) => {
 
     const reverse = [...arrHistory].reverse();
     const date = Date.now();
+
+
+    const imageSrc = donat;
 
     return (
         <div classNameName=''>
@@ -19,7 +23,7 @@ const HistoryBmi = ({ arrHistory, deleteHistoryById }) => {
                         {reverse.length == 0 ? (
                             <div>
                                 <h1 className='text-center fs-3 color-dark-green'>Silakan hitung BMI</h1>
-                                <img className='mt-5 mb-0 around w-100' src="/src/assets/donat.svg" alt="" />
+                                <img className='mt-5 mb-0 around w-100' src={imageSrc} alt="Donat Maskot" />
 
                             </div>
 
