@@ -15,7 +15,7 @@ const HistoryBmi = ({arrHistory,deleteHistoryById}) => {
                     <ul className="list-group list-group-flush">
                        {arrHistory.map((history)=>(
                             
-                         <HistoryItem history={history}/>
+                         <HistoryItem history={history} deleteHistoryById={deleteHistoryById}/>
 
                        ))}
                     </ul>

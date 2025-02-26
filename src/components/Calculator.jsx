@@ -13,12 +13,15 @@ const Calculator = () => {
 
     const [arrHistory, setArrHistory] = useState(JSON.parse(localStorage.getItem("history")) || []);
 
-    const addHistory = () => {
-        setArrHistory([...arrHistory, bmiObj])
-    }
+
 
     const deleteHistoryById = (id) => {
-        setArrHistory(arrHistory.filter(history => history.id !== id))
+        const newHistory = arrHistory.filter(history => history.id !== id);
+        setArrHistory(newHistory)
+        localStorage.setItem("history", JSON.stringify(newHistory));
+
+        console.log(JSON.parse(localStorage.getItem("history").length));
+        
     }
 
     return (
