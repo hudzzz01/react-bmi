@@ -1,6 +1,9 @@
 import React from 'react';
+import HistoryItem from './HistoryItem';
 
-const HistoryBmi = () => {
+const HistoryBmi = ({arrHistory,deleteHistoryById}) => {
+
+    
     return (
         <div classNameName=''>
             <div className='d-flex justify-content-center mt-5 bg-dark-green'>
@@ -10,7 +13,11 @@ const HistoryBmi = () => {
                         History
                     </div>
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item bg-light-green">An item</li>
+                       {arrHistory.map((history)=>(
+                            
+                         <HistoryItem history={history}/>
+
+                       ))}
                     </ul>
                 </div>
             </div>

@@ -11,7 +11,7 @@ const Calculator = () => {
         id : 0
     });
 
-    const [arrHistory, setArrHistory] = useState(localStorage.getItem("history"));
+    const [arrHistory, setArrHistory] = useState(JSON.parse(localStorage.getItem("history")) || []);
 
     const addHistory = () => {
         setArrHistory([...arrHistory, bmiObj])
@@ -23,11 +23,11 @@ const Calculator = () => {
 
     return (
         <div className='bg-dark-green py-5'>
-            <InputFormCalculator setBmiObj={setBmiObj}/>
+            <InputFormCalculator setBmiObj={setBmiObj} setArrHistory={setArrHistory}/>
 
             <HasilBmi bmiObj={bmiObj} />
 
-            <HistoryBmi/>
+            <HistoryBmi arrHistory={arrHistory} deleteHistoryById={deleteHistoryById}/>
         </div>
     );
 }

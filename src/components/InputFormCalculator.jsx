@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { hitungBmi } from "../js/rumusHitungBmi";
 
-const InputFormCalculator = ({setBmiObj}) => {
+const InputFormCalculator = ({setBmiObj, setArrHistory}) => {
 
     const weightKg = useRef();
     const heightCm = useRef();
@@ -16,14 +16,33 @@ const InputFormCalculator = ({setBmiObj}) => {
         
         //prevent reload my page
         event.preventDefault();
+
+        //get bmi result and passing
         const result = calculateBmi();
 
-        
-        
+        //add to history in local storage
+        addHistory(result);
+            
         
 
 
 
+    }
+
+    function addHistory(resultBmiObj){
+        const oldHistory = JSON.parse(localStorage.getItem("history")) || [];
+        const newHistory = [...oldHistory, resultBmiObj]
+        
+        //save to the local storage
+        localStorage.setItem("history", JSON.stringify(newHistory));
+
+        console.log("ini local storage");
+        
+        console.log(JSON.parse(localStorage.getItem("history")));
+
+        //add new history to my state for trigger history component
+        setArrHistory(newHistory)
+        
     }
 
     function calculateBmi(){

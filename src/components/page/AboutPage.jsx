@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutPage = () => {
     return (
-        <div>
+        <div style={{height:"100vh"}}>
             Ini page about
         </div>
     );
