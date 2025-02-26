@@ -9,7 +9,7 @@ const Footer = () => {
             </div>
             <div class="card-body bg-light-green">
 
-                <p class="card-text color-dark-green">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text color-dark-green">All right reserved.</p>
 
             </div>
 

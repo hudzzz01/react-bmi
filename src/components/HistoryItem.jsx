@@ -5,6 +5,21 @@ const HistoryItem = ({ history,deleteHistoryById }) => {
     const dateHuman = new Date(history.id).toISOString().split('T')[0];
 
 
+    let imageMaskot = undefined;
+
+    if (history.category == "Obesitas") {
+        imageMaskot = <img className='mt-0 mb-2 around' style={{ width: "200px" }} src="/src/assets/olahraga_barbel.svg" alt="gym" />
+    } else if (history.category == "Kelebihan Berat Badan") {
+        imageMaskot = <img className='mt-0 mb-2 around' style={{ width: "200px" }} src="/src/assets/olahraga_bike.svg" alt="gym" />
+    } else if (history.category == "normal") {
+        imageMaskot = <img className='mt-0 mb-2 around' style={{ width: "200px" }} src="/src/assets/minum.svg" alt="gym" />
+    } else if (history.category == "kurus") {
+        imageMaskot = <img className='mt-0 mb-2 around' style={{ width: "200px" }} src="/src/assets/eat.svg" alt="gym" />
+    } else {
+        imageMaskot = <img className='mt-0 mb-2 around' style={{ width: "200px" }} src="/src/assets/moon_light.svg" alt="gym" />
+    }
+
+
     return (
         <li className="list-group-item bg-light-green">
             <div class="card bg-dark-green color-light-green">
@@ -17,6 +32,7 @@ const HistoryItem = ({ history,deleteHistoryById }) => {
                         <footer class="blockquote-footer">{history.name}<cite title="Source Title"> ~{dateHuman}</cite></footer>
                     </blockquote>
                     <button className='btn btn-danger' onClick={()=>deleteHistoryById(history.id)}>Delete</button>
+                        {imageMaskot}
                 </div>
             </div>
         </li>
