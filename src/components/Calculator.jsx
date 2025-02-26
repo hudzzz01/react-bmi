@@ -4,11 +4,11 @@ import HasilBmi from './HasilBmi';
 import HistoryBmi from './HistoryBmi';
 
 const Calculator = () => {
-    const [bmiObj,setBmiObj] = useState({
-        name : "",
-        count : 0,
-        category : null,
-        id : 0
+    const [bmiObj, setBmiObj] = useState({
+        name: "",
+        count: 0,
+        category: null,
+        id: 0
     });
 
     const [arrHistory, setArrHistory] = useState(JSON.parse(localStorage.getItem("history")) || []);
@@ -20,17 +20,20 @@ const Calculator = () => {
         setArrHistory(newHistory)
         localStorage.setItem("history", JSON.stringify(newHistory));
 
-        console.log(JSON.parse(localStorage.getItem("history").length));
-        
+        console.log(JSON.parse(localStorage.getItem("history")``.length));
+
     }
 
     return (
         <div className='bg-dark-green py-5'>
-            <InputFormCalculator setBmiObj={setBmiObj} setArrHistory={setArrHistory}/>
+            <div className='d-flex flex-wrap justify-content-center gap-3'>
+                <InputFormCalculator setBmiObj={setBmiObj} setArrHistory={setArrHistory} />
 
-            <HasilBmi bmiObj={bmiObj} />
+                <HasilBmi bmiObj={bmiObj} />
 
-            <HistoryBmi arrHistory={arrHistory} deleteHistoryById={deleteHistoryById}/>
+            </div>
+
+            <HistoryBmi arrHistory={arrHistory} deleteHistoryById={deleteHistoryById} />
         </div>
     );
 }

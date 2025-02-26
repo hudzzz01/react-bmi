@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HistoryItem = ({ history,deleteHistoryById }) => {
+const HistoryItem = ({ history, deleteHistoryById }) => {
 
     const dateHuman = new Date(history.id).toISOString().split('T')[0];
 
@@ -21,8 +21,8 @@ const HistoryItem = ({ history,deleteHistoryById }) => {
 
 
     return (
-        <li className="list-group-item bg-light-green">
-            <div class="card bg-dark-green color-light-green">
+        <li className="list-group-item bg-semi-green border-0">
+            <div class="card bg-dark-green border-0 shadow mb-0 pb-3 ps-5 pe-3 color-light-green">
                 <div class="card-header">
                     {history.id}
                 </div>
@@ -31,8 +31,11 @@ const HistoryItem = ({ history,deleteHistoryById }) => {
                         <p> BMI : {history.count}</p>
                         <footer class="blockquote-footer">{history.name}<cite title="Source Title"> ~{dateHuman}</cite></footer>
                     </blockquote>
-                    <button className='btn btn-danger' onClick={()=>deleteHistoryById(history.id)}>Delete</button>
+                    <div className='d-flex justify-content-center align-items-center gap-5'>
                         {imageMaskot}
+                        <button className='btn btn-danger' onClick={() => deleteHistoryById(history.id)}>Delete</button>
+
+                    </div>
                 </div>
             </div>
         </li>

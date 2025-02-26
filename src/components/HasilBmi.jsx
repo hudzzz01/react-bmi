@@ -19,11 +19,13 @@ const HasilBmi = ({ bmiObj }) => {
     }
 
     return (
-        <div className="card text-center pt-5 bg-dark-green">
-            <div className="card-header bg-semi-green font-weight-bold fs-4 color-dark-green kanit-bold">
-                Hasil BMI
+
+        <div className='d-flex justify-content-center'>
+              <div className="card text-center pt-5  bg-semi-green border-0 shadow" style={{ width: "18rem" }} >
+            <div className="border-0 card-header bg-semi-green font-weight-bold fs-4 color-dark-green kanit-bold">
+                Hasil BMI <i class="bi bi-person-arms-up"></i>
             </div>
-            <div className="card-body bg-light-green kanit-bold color-dark-green">
+            <div className=" shadow rounded border-0 card-body bg-light-green kanit-bold color-dark-green">
                 <h5 className="card-title">{bmiObj.count}</h5>
                 <p className="card-text">{bmiObj.category}</p>
 
@@ -35,6 +37,8 @@ const HasilBmi = ({ bmiObj }) => {
 
             </div>
         </div>
+        </div>
+      
     );
 }
 
