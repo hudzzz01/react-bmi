@@ -1,18 +1,21 @@
 import React from 'react';
 
-const HasilBmi = () => {
+const HasilBmi = ({bmiObj}) => {
+
+    console.log(bmiObj);
+    
     return (
-        <div class="card text-center pt-5 bg-dark-green">
-            <div class="card-header bg-semi-green font-weight-bold fs-4 color-dark-green kanit-bold">
-                Hasil BMI
+        <div className="card text-center pt-5 bg-dark-green">
+            <div className="card-header bg-semi-green font-weight-bold fs-4 color-dark-green kanit-bold">
+                Hasil BMI 
             </div>
-            <div class="card-body bg-light-green kanit-bold color-dark-green">
-                <h5 class="card-title">Ini hasil BMI</h5>
-                <p class="card-text">Keterangan jika perlu</p>
+            <div className="card-body bg-light-green kanit-bold color-dark-green">
+                <h5 className="card-title">{bmiObj.count}</h5>
+                <p className="card-text">{bmiObj.category}</p>
               
             </div>
-            <div class="card-footer text-muted bg-semi-green font-weight-bold fs-6 color-dark-green kanit-bold">
-                2 days ago
+            <div className="card-footer text-muted bg-semi-green font-weight-bold fs-6 color-dark-green kanit-bold">
+                {bmiObj.id}
             </div>
         </div>
     );
