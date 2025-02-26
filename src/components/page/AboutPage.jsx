@@ -1,8 +1,10 @@
 import React from 'react';
+import moonLight from '../../assets/moon_light.svg';
 
 const AboutPage = () => {
+    const imageSrc = moonLight;
     return (
-        <div  className='bg-semi-green pt-5 px-3' style={{ height: "auto",  }}>
+        <div className='bg-semi-green pt-5 px-3' style={{ height: "auto", }}>
             <div className="card bg-low-green color-midle-green">
                 <h5 className="card-header  bg-midle-green color-light-green">Created By Hudzaifah</h5>
                 <div className="card-body">
@@ -12,7 +14,7 @@ const AboutPage = () => {
                 </div>
             </div>
             <div>
-                <img className='mt-0 mb-2 around' style={{width:"100%"}} src="/src/assets/moon_light.svg" alt="" />
+                <img className='mt-0 mb-2 around' style={{ width: "100%" }} src={imageSrc} alt="Maskot" />
             </div>
         </div>
     );

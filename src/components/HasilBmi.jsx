@@ -1,22 +1,29 @@
 import React from 'react';
+import olahragaBarbel from '../assets/olahraga_barbel.svg';
+import olahragaBike from '../assets/olahraga_bike.svg';
+import minum from '../assets/minum.svg';
+import eat from '../assets/eat.svg';
+import moonLight from '../assets/moon_light.svg';
+
+
 
 const HasilBmi = ({ bmiObj }) => {
 
-    console.log(bmiObj);
+    // console.log(bmiObj);
 
-    let imageMaskot = undefined;
+    const categoryImages = {
+        "Obesitas": olahragaBarbel,
+        "Kelebihan Berat Badan": olahragaBike,
+        "normal": minum,
+        "kurus": eat,
+        "default": moonLight
+    };
 
-    if (bmiObj.category == "Obesitas") {
-        imageMaskot = <img className='mt-0 mb-2 around' style={{ width: "200px" }} src="/src/assets/olahraga_barbel.svg" alt="gym" />
-    } else if (bmiObj.category == "Kelebihan Berat Badan") {
-        imageMaskot = <img className='mt-0 mb-2 around' style={{ width: "200px" }} src="/src/assets/olahraga_bike.svg" alt="gym" />
-    } else if (bmiObj.category == "normal") {
-        imageMaskot = <img className='mt-0 mb-2 around' style={{ width: "200px" }} src="/src/assets/minum.svg" alt="gym" />
-    } else if (bmiObj.category == "kurus") {
-        imageMaskot = <img className='mt-0 mb-2 around' style={{ width: "200px" }} src="/src/assets/eat.svg" alt="gym" />
-    } else {
-        imageMaskot = <img className='mt-0 mb-2 around' style={{ width: "200px" }} src="/src/assets/moon_light.svg" alt="gym" />
-    }
+    const imageSrc = categoryImages[bmiObj.category] || categoryImages["default"];
+    
+    const imageMaskot = (
+        <img className='mt-0 mb-2 around' style={{ width: "200px" }} src={imageSrc} alt="maskot" />
+    );
 
     return (
 

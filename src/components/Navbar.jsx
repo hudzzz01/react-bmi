@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
     return (
@@ -7,7 +8,7 @@ const Navbar = () => {
             <div classNameName="header shadow-lg bg-midle-green">
                 <nav className="navbar navbar-expand-lg bg-low-green ">
                     <div className="container-fluid bg-midle-green p-3 kanit-regular fs-4">
-                        <img style={{ width: "50px" }} src='src/assets/logo.png' alt="logo" />
+                        <img style={{ width: "50px" }} src={logo} alt="logo" />
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
