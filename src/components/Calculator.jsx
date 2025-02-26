@@ -1,6 +1,7 @@
 import React from 'react';
 import InputFormCalculator from './InputFormCalculator';
 import HasilBmi from './HasilBmi';
+import HistoryBmi from './HistoryBmi';
 
 const Calculator = () => {
     return (
@@ -9,6 +10,7 @@ const Calculator = () => {
 
             <HasilBmi />
 
+            <HistoryBmi/>
         </div>
     );
 }
