@@ -7,6 +7,7 @@ import moonLight from '../assets/moon_light.svg';
 const HistoryItem = ({ history, deleteHistoryById }) => {
 
     const dateHuman = new Date(history.id).toISOString().split('T')[0];
+    const category = history.category.toUpperCase();
     const categoryImages = {
         "Obesitas": olahragaBarbel,
         "Kelebihan Berat Badan": olahragaBike,
@@ -28,13 +29,14 @@ const HistoryItem = ({ history, deleteHistoryById }) => {
                 <div class="card-header">
                     {history.id}
                 </div>
-                <div class="card-body bg-semi-green color-dark-green">
+                <div class="d-flex flex-column flex-wrap card-body bg-semi-green rounded shadow color-dark-green">
                     <blockquote class="blockquote mb-0">
                         <p> BMI : {history.count}</p>
                         <footer class="blockquote-footer">{history.name}<cite title="Source Title"> ~{dateHuman}</cite></footer>
                     </blockquote>
-                    <div className='d-flex justify-content-center align-items-center gap-5'>
+                    <div className='d-flex flex-wrap justify-content-center align-items-center gap-5'>
                         {imageMaskot}
+                        <span className='fs-3 kanit-bold'>{category}</span>
                         <button className='btn btn-danger' onClick={() => deleteHistoryById(history.id)}>Delete</button>
 
                     </div>

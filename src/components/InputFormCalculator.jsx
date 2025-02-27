@@ -75,6 +75,10 @@ const InputFormCalculator = ({ setBmiObj, setArrHistory }) => {
         console.log(typeof (height));
 
         //adding some validation input becouse some browser cant't handle it
+        if (nameDisplay.length >= 50) {
+            nameDisplay = nameDisplay.slice(0, 50);
+        }
+        
         if (nameDisplay == "" || nameDisplay == null) {
             nameDisplay = "Anonim : "
         }
