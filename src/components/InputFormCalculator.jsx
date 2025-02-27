@@ -10,11 +10,6 @@ const InputFormCalculator = ({ setBmiObj, setArrHistory }) => {
     const heightCm = useRef();
     const name = useRef();
 
-    function hanldeEnter(event) {
-        event.preventDefault();
-        calculateBmi()
-    }
-
     function handleClickSumbit(event) {
 
         //prevent reload my page

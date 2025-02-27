@@ -5,9 +5,12 @@ import eat from '../assets/eat.svg';
 import moonLight from '../assets/moon_light.svg';
 
 const HistoryItem = ({ history, deleteHistoryById }) => {
-
+    
+    //convering the id, to the human readable date. bcous it is generated from timestamp
     const dateHuman = new Date(history.id).toISOString().split('T')[0];
     const category = history.category.toUpperCase();
+
+    //get the category image from assert, insert to object
     const categoryImages = {
         "Obesitas": olahragaBarbel,
         "Kelebihan Berat Badan": olahragaBike,
@@ -16,6 +19,7 @@ const HistoryItem = ({ history, deleteHistoryById }) => {
         "default": moonLight
     };
 
+    //clasify the image category for reander
     const imageSrc = categoryImages[history.category] || categoryImages["default"];
 
 

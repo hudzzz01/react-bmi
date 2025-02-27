@@ -9,7 +9,6 @@ import moonLight from '../assets/moon_light.svg';
 
 const HasilBmi = ({ bmiObj }) => {
 
-    // console.log(bmiObj);
 
     const categoryImages = {
         "Obesitas": olahragaBarbel,
